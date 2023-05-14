@@ -1,0 +1,35 @@
+.addtodo-box {
+    /* height: 80vh; */
+    padding: 1rem !important;
+    border-radius: 1rem;
+    overflow: auto;
+}
+
+.addtodo-heading {
+    color: white !important;
+}
+
+.addtodo-item-box {
+    /* border: 2px solid grey; */
+    border-radius: 1rem;
+    height: max-content;
+    padding: 1rem 10px !important;
+    width: 30vw;
+}
+
+.addtodo-item-content {
+    height: max-content;
+    background-color: purple;
+    color: white;
+    border-radius: 1rem;
+    overflow: hidden;
+    font-weight: 700;
+}
+
+.addtodo-item-checkbox {
+    height: max-content;
+}
+
+.addtodo-item-delete {
+    padding: 0 !important;
+}

@@ -1,0 +1,65 @@
+.todolist-item-segment {
+    border-radius: 1rem !important;
+    background: whitesmoke !important;
+    overflow: hidden;
+}
+
+.todolist-box {
+    background: white;
+    height: 80vh;
+    padding: 1rem !important;
+    border-radius: 1rem;
+    overflow: auto;
+    align-items: flex-start !important;
+    width: 28vw !important;
+}
+
+.grid-row {
+    height: max-content;
+}
+
+.todolist-item-box {
+    border: 2px solid grey;
+    border-radius: 1rem;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    height: fit-content;
+    background-color: #84019e;
+    padding: 0.2rem !important;
+    padding-right: 2rem !important;
+    width: 25vw;
+    overflow: hidden;
+}
+
+.completed >.todolist-item-box {
+    padding-left: 1rem !important;
+}
+
+.todolist-item-content {
+    height: max-content;
+    color: white;
+    overflow: hidden;
+    font-weight: 700;
+    padding: 0 !important;
+}
+
+.todolist-item-content-title {
+    width: 20% !important;
+    border-bottom: 1px dotted white;
+}
+
+.todolist-item-content-description {
+    width: 25vw;
+    padding: 1rem !important;
+    color: black !important;
+    text-align: left;
+}
+
+.todolist-item-checkbox {
+    height: max-content;
+}
+
+.todolist-item-delete {
+    padding: 0 !important;
+    width: 10px !important;
+}
