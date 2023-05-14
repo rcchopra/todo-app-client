@@ -62,7 +62,7 @@ export const addNewTodo = (todo) => {
 
         try {
             const reqBody = todo
-            const response = await axios.post('http://localhost:1337/todos', reqBody); // replace with your API endpoint
+            const response = await axios.post(`${process.env.REACT_APP_API_BASE_URL}/todos`, reqBody); // replace with your API endpoint
             console.log("New todo added successfully", response.data)
             dispatch(addNewTodoSuccess(response.data));
         } catch (error) {
@@ -95,7 +95,7 @@ export const updateTodo = (id, todo) => {
         dispatch(updateTodoStart());
 
         try {
-            const response = await axios.put(`http://localhost:1337/todos/${id}`, todo); // replace with your API endpoint
+            const response = await axios.put(`${process.env.REACT_APP_API_BASE_URL}/todos/${id}`, todo); // replace with your API endpoint
             console.log("Todo updated successfully", response.data, todo)
             dispatch(updateTodoSuccess({"id": id}));
         } catch (error) {
@@ -128,7 +128,7 @@ export const deleteTodo = (todo) => {
         dispatch(deleteTodoStart());
 
         try {
-            const response = await axios.delete(`http://localhost:1337/todos/${todo.id}`); // replace with your API endpoint
+            const response = await axios.delete(`${process.env.REACT_APP_API_BASE_URL}/todos/${todo.id}`); // replace with your API endpoint
             console.log("Todo deleted successfully", response.data, todo)
             dispatch(deleteTodoSuccess(todo));
         } catch (error) {
@@ -162,7 +162,7 @@ export const fetchTodoList = (board) => {
 
         try {
             const reqBody = {board_id : board.id, completed: false}
-            const response = await axios.post('http://localhost:1337/todos/filter', reqBody); // replace with your API endpoint
+            const response = await axios.post(`${process.env.REACT_APP_API_BASE_URL}/todos/filter`, reqBody); // replace with your API endpoint
             console.log("next tasks response.data", response.data)
             dispatch(fetchTodoListSuccess(response.data));
         } catch (error) {
@@ -193,7 +193,7 @@ export const fetchCompletedTodoList = (board) => {
 
         try {
             const reqBody = {board_id : board.id, completed: true}
-            const response = await axios.post('http://localhost:1337/todos/filter', reqBody); // replace with your API endpoint
+            const response = await axios.post(`${process.env.REACT_APP_API_BASE_URL}/todos/filter`, reqBody); // replace with your API endpoint
             console.log("completed tasks response.data", response.data)
             dispatch(fetchCompletedTodoListSuccess(response.data));
         } catch (error) {
@@ -260,7 +260,7 @@ export const fetchBoardList = () => {
         dispatch(fetchBoardListStart());
 
         try {
-            const response = await axios.get('http://localhost:1337/boards');
+            const response = await axios.get(`${process.env.REACT_APP_API_BASE_URL}/boards`);
             console.log(response.data)
             dispatch(fetchBoardListSuccess(response.data));
         } catch (error) {
@@ -274,7 +274,7 @@ export const addNewBoard = (boardData) => {
         dispatch(addNewBoardStart())
 
         try {
-            const response = await axios.post('http://localhost:1337/boards', boardData);
+            const response = await axios.post(`${process.env.REACT_APP_API_BASE_URL}/boards`, boardData);
             dispatch(addNewBoardSuccess(response.data));
             console.log('Board added successfully!');
         } catch (error) {
@@ -290,7 +290,7 @@ export const deleteBoard = (board) => {
         dispatch(deleteBoardStart())
 
         try {
-            const response = await axios.delete(`http://localhost:1337/boards/${board.id}`);
+            const response = await axios.delete(`${process.env.REACT_APP_API_BASE_URL}/boards/${board.id}`);
             console.log(response)
             dispatch(deleteBoardSuccess(board));
             console.log('Board deleted successfully!', board);
